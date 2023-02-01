@@ -9,7 +9,7 @@ A brief description of what this project does and who it's for
 first download or clone the projects, run the following command
 
 ```bash
-  git clone @Engin-Smith's coffeeSystem-project
+  git clone https://github.com/Engin-Smith/CoffeSystem.git
 
 ```
 
