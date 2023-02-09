@@ -28,4 +28,9 @@ This project is used by teams god <"Illuminate grandal king of hell">:
 
 - stud 1
 - stud2
+- stud2
+- stud2
+- stud2
+- stud2
+- stud2
 
