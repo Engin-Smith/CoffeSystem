@@ -346,6 +346,10 @@
                     <!------------for using in ASP.net------------------>
                     <asp:GridView ID="product_list" Class="table table-responsive" runat="server"></asp:GridView>
                 </div>
+                <div>
+                    <asp:Button ID="Button1" runat="server" Text="Button" />
+                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/assets/images/1.jpg" />
+                </div>
             </div>
         </div>
     </form>
