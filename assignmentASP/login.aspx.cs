@@ -55,57 +55,6 @@ namespace assignmentASP.login
                 }
                 con.Close();
             }
-            /*string connectionString;
-            SqlConnection con;
-
-             MessageBox obj = new MessageBox();
-            connectionString = "Data Source=DESKTOP-B4KL58D\\SQLEXPRESS; Initial Catalog=dbCafe_asp; User ID=sa; Password=123";
-            //connectionString = "Server=WIN-7VR0D9MAM8H;Database = Studentdb;Integrated Security=SSPI";
-            con = new SqlConnection(connectionString);
-            try
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("select(*) from tbl_login where username='"+txt_username.Text+"'and password='"+txt_password.Text+"'", con);
-                cmd.Parameters.AddWithValue("username", txt_username.Text);
-                cmd.Parameters.AddWithValue("password", txt_password.Text);
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                cmd.ExecuteNonQuery();
-
-                ////------------------------------------------///
-                /*SqlCommand cmd = new SqlCommand("select from tbl_login where username=@username and password=@password", con);
-                cmd.Parameters.AddWithValue("username", txt_username.Text);
-                cmd.Parameters.AddWithValue("password", txt_password.Text);
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataSet ds= new DataSet();
-                sda.Fill(ds, "tbl_login");
-                if (ds.Tables["tbl_login"].Rows.Count > 0)
-                {
-                    obj.MsgBox("error login", this.Page, Page);
-                }
-                else { }*/
-
-            /*if (dt.Rows[0][0].ToString()=="1")
-            {
-                //Response.Write("<script>alert('successful login')</script>");
-                obj.MsgBox("successful login", this.Page, Page);
-                //Response.Redirect("~/views/index");
-            }
-            else
-            {
-                //Response.Write("<script>alert('error login')</script>");
-                obj.MsgBox("error login", this.Page, Page);
-            }
-            //obj.MsgBox("connectiondb is opened", this.Page, Page);
-        }
-        catch (Exception ex)
-        {
-            obj.MsgBox("login", this.Page, Page);
-            Response.Redirect("~/views/index");
-        }
-        con.Close();*/
-
             //if (txt_username.Text == "smith" && txt_password.Text == "123")
             //{
             //    obj.MsgBox("successful Login Click OK, for countinue", this.Page, Page);
@@ -122,27 +71,6 @@ namespace assignmentASP.login
             //    obj.MsgBox("error login", this.Page, Page);
 
             //}
-            //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-B4KL58D\\SQLEXPRESS; Initial Catalog=dbCafe_asp; User ID=sa; Password=123");
-            //SqlCommand cmd = new SqlCommand("select * from tbl_data where username=@username and password=@password", con);
-            //cmd.Parameters.AddWithValue("@username", txt_username.Text);
-            //cmd.Parameters.AddWithValue("password", txt_password.Text);
-            //SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            //DataTable dt = new DataTable();
-            ////sda.Fill(dt);
-            //con.Open();
-            //int i = cmd.ExecuteNonQuery();
-            //con.Close();
-
-            //if (dt.Rows.Count > 0)
-            //{
-            //    Response.Redirect("~/views/index");
-            //}
-            //else
-            //{
-            //    obj.MsgBox("error login", this.Page, Page);
-
-            //}
-
         }
 
         protected void btn_seller_log_Click(object sender, EventArgs e)
