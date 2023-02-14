@@ -291,67 +291,76 @@
         <div class="container jumbotron">
             <div class="row">
                 <div class="col-sm-4">
-                    <form>
-                        <div class="mb-3">
-                            <label for="pd_id" class="form-label">Product ID</label>
-                            <input type="Text" class="form-control" runat="server" id="pd_id"/>
-                        </div>
-                        <div class="mb-3">
-                            <label for="" class="form-label">Product Name</label>
-                            <input type="Text" class="form-control" runat="server" id="pd_name"/>
-                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="pd_ct" class="form-label">Product Category</label>
-                            <div class="dropdown">
-                                <a class="btn btn-info dropdown-toggle" style="width: 50%; font-size: 15px" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="cb_pd_cgt">Dropdown Menu</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Beverage</a></li>
-                                    <li><a class="dropdown-item" href="#">Snake</a></li>
-                                </ul>
-                            </div>
-
-                            <asp:DropDownList ID="DropDownList1" runat="server">
-                            </asp:DropDownList>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="" class="form-label">Princes</label>
-                            <input type="Text" class="form-control" runat="server" id="pd_price"/>
-                        </div>
-
-
-                        <asp:Button ID="btn_insert" runat="server" Text="Insert" Height="40px" Width="30%" Font-Size="20px" BackColor="#0081B4" BorderColor="#0081B4" ForeColor="White" />
-                        <asp:Button ID="btn_update" runat="server" Text="Update" Height="40px" Width="30%" Font-Size="20px" BackColor="#03C988" BorderColor="#03C988" ForeColor="White" />
-                        <asp:Button ID="btn_delete" runat="server" Text="Delete" Height="40px" Width="30%" Font-Size="20px" BackColor="#F55050" BorderColor="#F55050" ForeColor="White" />
-                        <!--<button type="submit" class="btn btn-primary" style="height:40px; width:30%;font-size:20px">Insert</button>
-                <button type="submit" class="btn btn-success" style="height:40px;width:30%;font-size:20px">Update</button>
-                <button type="submit" class="btn btn-danger" style="height:40px;width:30%;font-size:20px">Delete</button>--->
-                        <br />
-                        <br />
-                    </form>
+                    
+                <div class="mb-3">
+                    <label for="" class="form-label">Product Name</label>
+                    <asp:TextBox ID="b_name" class="form-control" runat="server"></asp:TextBox>
                 </div>
-                <div class="col-sm-8">
-                    <table class="table table-responsive" style="background-color: rgb(214, 221, 224);">
-                        <thead>
-                            <tr class="h5">
-                                <th>ID</th>
-                                <th>Products Name</th>
-                                <th>Products Category</th>
-                                <th>Products Prices</th>
-                            </tr>
-                        </thead>
-                    </table>
-                    <!------------for using in ASP.net------------------>
-                    <asp:GridView ID="product_list" Class="table table-responsive" runat="server"></asp:GridView>
+
+     
+                <div class="mb-3">
+                    <label for="" class="form-label">QTY</label>
+                    <asp:TextBox ID="b_qty" class="form-control" runat="server"></asp:TextBox>
                 </div>
-                <div>
-                    <asp:Button ID="Button1" runat="server" Text="Button" />
-                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/assets/images/1.jpg" />
+
+                <div class="mb-3">
+                    <label for="" class="form-label">Princes</label>
+                    <asp:TextBox ID="b_price" class="form-control" runat="server"></asp:TextBox>
                 </div>
-            </div>
-        </div>
-    </form>
+                    <div class="mb-3">
+                    <label for="" class="form-label">Date</label>
+                    <input type ="date" class="form-control" runat="server" id="b_date" />
+                </div>
+                     <asp:Button ID="btn_oder" runat="server" Text="Order" Height="40px" Width="30%" Font-Size="20px" BackColor="#0081B4" BorderColor="#0081B4" ForeColor="White" OnClick="btn_oder_Click"/>
+                </div>
+
+                <%-- ================== --%>
+                 <div class="col-sm-4">
+                    <asp:GridView ID="b_list" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="225px" Width="571px">
+                        <AlternatingRowStyle BackColor="White" />
+                        <EditRowStyle BackColor="#7C6F57" />
+                        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#E3EAEB" />
+                        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                        <SortedAscendingHeaderStyle BackColor="#246B61" />
+                        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                        <SortedDescendingHeaderStyle BackColor="#15524A" />
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbCoffeeConnectionString %>" SelectCommand="SELECT * FROM [tbl_product]"></asp:SqlDataSource>
+                    </div>
+                <%-- ==================== --%>
+                </div>
+            <%-- ====================== --%>
+            <div class="col-sm-8">
+                    <asp:GridView ID="p_list_view" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="p_id" ForeColor="#333333" GridLines="None" Height="225px" Width="571px" OnSelectedIndexChanged="gvplist_SelectedIndexChanged">
+                        <AlternatingRowStyle BackColor="White" />
+                        <Columns>
+                            <asp:CommandField ShowSelectButton="True" />
+                            <asp:BoundField DataField="p_id" HeaderText="#" ReadOnly="True" SortExpression="p_id" />
+                            <asp:BoundField DataField="p_name" HeaderText="Name" SortExpression="p_name" />
+                            <asp:BoundField DataField="p_category" HeaderText="Category" SortExpression="p_category" />
+                            <asp:BoundField DataField="p_qty" HeaderText="qty" SortExpression="p_qty" />
+                            <asp:BoundField DataField="p_price" HeaderText="Price" SortExpression="p_price" />
+                        </Columns>
+                        <EditRowStyle BackColor="#7C6F57" />
+                        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#E3EAEB" />
+                        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                        <SortedAscendingHeaderStyle BackColor="#246B61" />
+                        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                        <SortedDescendingHeaderStyle BackColor="#15524A" />
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:dbCoffeeConnectionString %>" SelectCommand="SELECT * FROM [tbl_product]"></asp:SqlDataSource>
+                    </div>
+            <%-- ========================= --%>
+                </div>
+ 
+            </form>
 </body>
 </html>
