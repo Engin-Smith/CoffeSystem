@@ -33,13 +33,22 @@ namespace assignmentASP.views.admin
         protected global::System.Web.UI.WebControls.TextBox p_name;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// p_dl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList p_dl;
+
+        /// <summary>
+        /// p_qty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox p_qty;
 
         /// <summary>
         /// p_price control.
@@ -49,6 +58,15 @@ namespace assignmentASP.views.admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox p_price;
+
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
         /// btn_insert control.
@@ -78,12 +96,21 @@ namespace assignmentASP.views.admin
         protected global::System.Web.UI.WebControls.Button btn_delete;
 
         /// <summary>
-        /// product_list control.
+        /// p_list_view control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView product_list;
+        protected global::System.Web.UI.WebControls.GridView p_list_view;
+
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

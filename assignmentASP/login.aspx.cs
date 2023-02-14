@@ -26,13 +26,13 @@ namespace assignmentASP.login
             string pass = txt_password.Text;
             SqlConnection con;
             string sql = null;
-            MessageBox obj = new MessageBox();
+
             con = new SqlConnection(@"Data Source = DESKTOP-B4KL58D\SQLEXPRESS04;Initial Catalog=dbCoffee;User ID=sa; Password=123");
 
 
             if (user == "" || pass == "")
             {
-                obj.MsgBox("Empty user or password", this.Page, Page);
+                obj.MsgBox(" Empty user or password ",this.Page,Page);
             }
             else
             {
